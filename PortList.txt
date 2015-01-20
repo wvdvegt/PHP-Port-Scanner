@@ -1,0 +1,29 @@
+20||FTP(Data Transfer)
+21||FTP (Control)
+22||SSH
+23||Telnet
+25||SMTP(Default)
+43||Whois (Domain Ownership)
+57||MTP
+80||HTTP
+88||Kerberos
+110||POP3
+115||SFTP
+143||IMAP
+443||HTTP(SSL)
+465||SMTP(SSL)
+513||R-Login
+546||DHCPv6 (Client)
+547||DHCPv6 (Server)
+587|| SMTP(TLS)
+953||DNS
+989||FTP(SSL)(Data Transfer)
+990||FTP(SSL)(Control)
+991||NAS
+993||IMAP(SSL)
+995||POP3(SSL)
+1025||NFS/IIS/Taradata
+1194||OpenVPN
+1143||Microsoft SQL Server
+1144||Microsoft SQL Monitor
+3306||MySQL
