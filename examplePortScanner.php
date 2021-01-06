@@ -6,8 +6,8 @@ header('Content-Type: application/json');
 
 // Example using a URL to portList.txt.
 
-// Usage: http://localhost/PHP-Port-Scanner/portscanner.php?port=<port number>&server=<server url>
-// Usage: http://localhost/PHP-Port-Scanner/portscanner.php?port=<port number[,port number, ...]>&server=<server url>
+// Usage: http://localhost/PHP-Port-Scanner/examplePortScanner.php?port=<port number>&server=<server url>
+// Usage: http://localhost/PHP-Port-Scanner/examplePortScanner.php?port=<port number[,port number, ...]>&server=<server url>
 
 // 1) Get URL of this page.
 $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
