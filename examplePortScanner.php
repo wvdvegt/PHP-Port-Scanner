@@ -17,7 +17,7 @@ $url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $parts=parse_url($url);
 
 // 3) Build the PortList.txt URL.
-$portlist=$parts['scheme'].'://'.$parts['host'].str_replace('portscanner.php','',$parts['path']).'PortList.txt';
+$portlist=$parts['scheme'].'://'.$parts['host'].str_replace('examplePortScanner.php','',$parts['path']).'PortList.txt';
 
 // 4) Parse query part
 parse_str($parts['query'], $queryparts);
