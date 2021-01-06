@@ -6,12 +6,11 @@ abstract class PortScanner
     protected $hostName;
     protected $scanResult;
 
-    protected function __construct($portNumber, $hostName)
+    protected function __construct($portNumber, $hostName, $portlist='PortList.txt')
     {
-
         $this->portNumber = $portNumber;
         $this->hostName = $this->cleanHostName($hostName);
-        asort($this->portNumber);
+        $this->portlist=$portlist;
     }
 
     public abstract function scanPort();
@@ -28,30 +27,25 @@ abstract class PortScanner
 
     protected function getPortName()
     {
-
-        $fileName = 'PortList.txt';
-
+        $fileName = $this->portlist;
 
         $portList = file($fileName);
-        $nameFound = '';
+
+        $this->portName = 'Not Recognized';
+
         foreach ($portList as $portDetails) {
             $portDetailing = explode('||', $portDetails);
             if ($portDetailing[0] != null) {
                 if ($this->portNumber == trim($portDetailing[0])) {
                     $this->portName = $portDetailing[1];
-                    $nameFound = 1;
-                }
-
-                if ($nameFound != 1) {
-                    $this->portName = 'Not Recognized';
+                    break;
                 }
             }
-
         }
         return trim($this->portName);
     }
 
-    private function  cleanHostName($hostName)
+    private function cleanHostName($hostName)
     {
         $schemes = array('http://','https://');
         foreach($schemes as $scheme ) {

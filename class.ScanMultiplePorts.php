@@ -5,16 +5,14 @@ class ScanMultiplePorts extends PortScanner
 {
     protected $allPorts;
 
-    function __construct($portNumber, $hostName)
+    function __construct($portNumber, $hostName, $portlist='PortList.txt')
     {
         if (!is_array($portNumber)) {
             die('All port numbers must be defined in an array format');
         }
-        parent::__construct($portNumber, $hostName);
-        $this->allPorts = $portNumber;
-        $this->scanResult = array();
-
-
+        parent::__construct($portNumber, $hostName, $portlist);
+        $this->allPorts =$portNumber;
+        asort($this->allPorts);
     }
 
     public function scanPort()
@@ -38,4 +36,4 @@ class ScanMultiplePorts extends PortScanner
         }
         return $this->scanResult;
     }
-} 
+}

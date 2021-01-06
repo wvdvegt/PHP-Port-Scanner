@@ -3,11 +3,11 @@ require_once 'class.PortScanner.php';
 
 class ScanSinglePort extends PortScanner {
 
-    function __construct($portNumber,$hostName) {
+    function __construct($portNumber,$hostName,$portlist='PortList.txt') {
         if(is_array($portNumber)) {
             die('Only single port is allowed to scan');
         }
-        parent::__construct($portNumber,$hostName);
+        parent::__construct($portNumber,$hostName,$portlist);
     }
 
     public function scanPort() {
@@ -28,4 +28,4 @@ class ScanSinglePort extends PortScanner {
         }
         return $this->scanResult;
     }
-} 
+}
