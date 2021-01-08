@@ -8,7 +8,7 @@ abstract class PortScanner
 
     protected function __construct($portNumber, $hostName, $portlist='PortList.txt')
     {
-        $this->portNumber = $portNumber;
+        $this->portNumber = (int)$portNumber;
         $this->hostName = $this->cleanHostName($hostName);
         $this->portlist=$portlist;
     }
